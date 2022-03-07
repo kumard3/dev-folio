@@ -1,16 +1,6 @@
 {
-  "name": "tailwind-typescript-starter-nextjs",
+  "name": "dev-folio",
   "version": "1.0.0",
-  "description": "typescript starter with tailwindcss",
-  "author": "kumard3",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Cyphen12/tailwind-typescript-starter.git"
-  },
-  "source": "pages/index.tsx",
-  "engines": {
-    "node": ">=14"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -32,15 +22,7 @@
     "tailwindcss": "^3.0.7",
     "typescript": "4.5.4"
   },
-  "bugs": {
-    "url": "https://github.com/Cyphen12/tailwind-typescript-starter/issues"
-  },
-  "homepage": "https://github.com/Cyphen12/tailwind-typescript-starter#readme",
-  "main": "next.config.js",
-  "keywords": [
-    "nextjs",
-    "tailwindcss",
-    "typescript",
-    "starter"
-  ]
+  "eslintConfig": {
+    "extends": "next"
+  }
 }
