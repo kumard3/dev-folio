@@ -2,6 +2,7 @@
 import Link from "next/link";
 import * as React from "react";
 import { useForm } from "react-hook-form";
+import HeroComponent from "../template-2/components/Hero";
 
 
 export default function Home() {
@@ -23,7 +24,8 @@ export default function Home() {
 
   console.log(username);
   return (
-    <div className="flex bg-black justify-center items-center text-white min-h-screen">
+    <div className="bg-[#141628] min-h-screen text-slate-50 relative ">
+      <HeroComponent name="hero" />
       <div className="flex flex-col ">
         <form onSubmit={handleSubmit(onSubmit)}>
           <input {...register("username")} className="text-black" />
