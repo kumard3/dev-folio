@@ -2,7 +2,6 @@
 import Link from "next/link";
 import * as React from "react";
 import { useForm } from "react-hook-form";
-import HeroComponent from "../template-2/components/Hero";
 
 
 export default function Home() {
@@ -11,13 +10,10 @@ export default function Home() {
     mode: "onChange",
   });
 
-  const { isValid } = formState;
-
-  const onSubmit = ({ username }) => {
-    if (!username) return;
+  const onSubmit = (data: any) => {
+    if (!data.username) return;
     setUserName(username);
-    if (window !== undefined)
-      window.location = `/portfolio/${username}`;
+    if (window !== undefined) window.location.href = `/portfolio/${username}`;
   };
 
   // const onSubmit = (data) => setUserName(data.username);
@@ -25,7 +21,6 @@ export default function Home() {
   console.log(username);
   return (
     <div className="bg-[#141628] min-h-screen text-slate-50 relative ">
-      <HeroComponent name="hero" />
       <div className="flex flex-col ">
         <form onSubmit={handleSubmit(onSubmit)}>
           <input {...register("username")} className="text-black" />
