@@ -1,26 +1,27 @@
 /* eslint-disable @next/next/link-passhref */
-import Link from "next/link";
 import * as React from "react";
-import { useForm } from "react-hook-form";
-
+import { useForm, SubmitHandler } from "react-hook-form";
+type FormValues = {
+  username: string;
+};
 
 export default function Home() {
   const [username, setUserName] = React.useState<string | null>("");
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit } = useForm<FormValues>({
     mode: "onChange",
   });
 
-  const onSubmit = (data: any) => {
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
     if (!data.username) return;
-    setUserName(username);
-    if (window !== undefined) window.location.href = `/portfolio/${username}`;
+    setUserName(data.username);
+    if (window !== undefined)
+      window.location.href = `/portfolio/${data.username}`;
   };
-
   // const onSubmit = (data) => setUserName(data.username);
 
   console.log(username);
   return (
-    <div className="bg-[#141628] min-h-screen text-slate-50 relative ">
+    <div className="bg-[#141628] min-h-screen text-slate-50 flex justify-center items-center ">
       <div className="flex flex-col ">
         <form onSubmit={handleSubmit(onSubmit)}>
           <input {...register("username")} className="text-black" />
