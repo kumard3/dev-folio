@@ -50,8 +50,7 @@ export default function PortfolioPage({
       <About data={data!} />
       {devData.length === 0 ? "" : <Blog devData={devData} />}
 
-      
-      <Repo githubRepoData={githubRepoData} />
+      {/* <Repo githubRepoData={githubRepoData} /> */}
       <Footer username={githubUserData.name} />
     </div>
   );
