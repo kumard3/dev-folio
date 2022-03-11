@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/link-passhref */
 import * as React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import About from "../template-2/components/About";
+import About from "../template-1/components/About";
+import Blog from "../template-1/components/Blog";
 type FormValues = {
   username: string;
 };
 
 export default function Home() {
-
   const [username, setUserName] = React.useState<string | null>("");
   const { register, handleSubmit } = useForm<FormValues>({
     mode: "onChange",
@@ -28,7 +28,7 @@ export default function Home() {
         </span>
         <input
           {...register("username")}
-          className="text-black my-5  py-[.7em]"
+          className="text-black my-5 rounded-xl px-3 py-[.7em]"
         />
         <button
           type="submit"
@@ -40,8 +40,7 @@ export default function Home() {
         
       </form>
 
-      {/* Card */}
-      
+    
     </div>
   );
 }

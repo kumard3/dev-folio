@@ -6,17 +6,16 @@ interface Props {
 
 export default function HeroComponent({ name, image, summary }: Props) {
   return (
-    <section id="home" >
-      <div className="flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+    <section id="home">
+      <div className="flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between container max-auto">
         <div className="flex flex-col justify-center p-6 text-center  lg:text-left">
           <>
-            <div className="mb-[.7rem] ">
-              <h1 className="text-5xl font-bold  sm:text-6xl">
-                Hey, Im <span className="text-[#FC4370]">{name}</span>
-              </h1>
+          <p className="font-mono text-[#FC4370]">Welcome, I'm</p>
+            <div className="my-[.7rem] ">
+              <h1 className="text-5xl font-bold  sm:text-7xl">{name}</h1>
             </div>
-            <div className="my-[2rem]">
-              <p className="text-xl max-w-md">{summary}</p>
+            <div className="my-[1rem]">
+              <p className=" text-gray-400 max-w-md">{summary}</p>
             </div>
           </>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
@@ -32,10 +31,12 @@ export default function HeroComponent({ name, image, summary }: Props) {
           <img
             src={image}
             alt=""
-            className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 rounded-full  border-2 border-black p-1 bg-black"
+            className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 rounded-full p-1 bg-gradient-to-r from-[#FC4370]  to-red-500 "
           />
         </div>
       </div>
     </section>
   );
 }
+//background-color: #fc9842;
+// background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%); border-[#FC4370] 
