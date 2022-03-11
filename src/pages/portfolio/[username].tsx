@@ -16,7 +16,6 @@ export default function PortfolioPage({
   devData,
   githubRepoData,
   githubUserData,
-  devUserData,
 }: any) {
   // const {saveData}:any = useSaveData();
   const router = useRouter();
@@ -50,7 +49,7 @@ export default function PortfolioPage({
       <About data={data!} />
       {devData.length === 0 ? "" : <Blog devData={devData} />}
 
-      {/* <Repo githubRepoData={githubRepoData} /> */}
+      <Repo githubRepoData={githubRepoData} />
       <Footer username={githubUserData.name} />
     </div>
   );
@@ -70,18 +69,9 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   );
   //@ts-ignore
 
-  // const devUser = await fetch(`${DEVTO_USER_URL}${params.username}`);
-  const devUser = await fetch(`${DEVTO_USER_URL}${params.username}`);
-  const test = await fetch(
-    //@ts-ignore
-    `https://api.github.com/users/${params.username}`
-  );
-  const t = await test.json();
-  const devUserData = await devUser.json();
-
   const githubUserData = await githubUser.json();
   const githubRepoData = await githubRepo.json();
   const devData = await devCommunity.json();
-  return { props: { devData, githubRepoData, githubUserData, t, devUserData } };
+  return { props: { devData, githubRepoData, githubUserData } };
 };
 //https://dev.to/api/users/by_username?url=colbyfayock
