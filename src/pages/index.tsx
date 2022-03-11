@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/link-passhref */
 import * as React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import About from "../template-2/components/About";
 type FormValues = {
   username: string;
 };
@@ -38,6 +39,7 @@ export default function Home() {
         </button>
         
       </form>
+
       {/* Card */}
       
     </div>

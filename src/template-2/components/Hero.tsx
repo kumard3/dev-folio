@@ -6,10 +6,10 @@ interface Props {
 
 export default function HeroComponent({ name, image, summary }: Props) {
   return (
-    <section id="home" className="">
+    <section id="home" >
       <div className="flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
         <div className="flex flex-col justify-center p-6 text-center  lg:text-left">
-          <div className="">
+          <>
             <div className="mb-[.7rem] ">
               <h1 className="text-5xl font-bold  sm:text-6xl">
                 Hey, Im <span className="text-[#FC4370]">{name}</span>
@@ -18,7 +18,7 @@ export default function HeroComponent({ name, image, summary }: Props) {
             <div className="my-[2rem]">
               <p className="text-xl max-w-md">{summary}</p>
             </div>
-          </div>
+          </>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <a
               href="#work"
