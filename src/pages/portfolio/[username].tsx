@@ -5,7 +5,6 @@ import { GetServerSideProps } from "next";
 
 import { fetchUserReadme } from "../../lib/UserataFetch";
 import HeroComponent from "../../template-2/components/Hero";
-import { SaveDataContext, useSaveData } from "../../context/saveData";
 import Link from "next/link";
 
 export default function PortfolioPage({
@@ -13,7 +12,6 @@ export default function PortfolioPage({
   githubRepoData,
   githubUserData,
 }: any) {
-  const { saveData, setSaveData }: any = React.useContext(SaveDataContext);
   // const {saveData}:any = useSaveData();
   const router = useRouter();
   const { username } = router.query;

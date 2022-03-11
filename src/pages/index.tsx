@@ -1,13 +1,11 @@
 /* eslint-disable @next/next/link-passhref */
 import * as React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { SaveDataContext, useSaveData } from "../context/saveData";
 type FormValues = {
   username: string;
 };
 
 export default function Home() {
-  const { setSaveData, saveData }: any = React.useContext(SaveDataContext);
 
   const [username, setUserName] = React.useState<string | null>("");
   const { register, handleSubmit } = useForm<FormValues>({
@@ -20,10 +18,7 @@ export default function Home() {
     if (window !== undefined)
       window.location.href = `/portfolio/${data.username}`;
   };
-  React.useEffect(() => {
-    setSaveData(username);
-  }, [username]);
-  console.log(saveData, "setSaveData");
+
   return (
     <div className="flex justify-center items-center w-full min-h-screen ">
       <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col">
