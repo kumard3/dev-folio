@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/link-passhref */
 import * as React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { SaveDataContext, useSaveData } from "../context/saveData";
 type FormValues = {
   username: string;
 };
 
 export default function Home() {
+  const { setSaveData, saveData }: any = React.useContext(SaveDataContext);
+
   const [username, setUserName] = React.useState<string | null>("");
   const { register, handleSubmit } = useForm<FormValues>({
     mode: "onChange",
@@ -17,17 +20,31 @@ export default function Home() {
     if (window !== undefined)
       window.location.href = `/portfolio/${data.username}`;
   };
-  // const onSubmit = (data) => setUserName(data.username);
-
-  console.log(username);
+  React.useEffect(() => {
+    setSaveData(username);
+  }, [username]);
+  console.log(saveData, "setSaveData");
   return (
-    <div className="bg-[#141628] min-h-screen text-slate-50 flex justify-center items-center ">
-      <div className="flex flex-col ">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input {...register("username")} className="text-black" />
-          <button type="submit"> submit</button>
-        </form>
-      </div>
+    <div className="flex justify-center items-center w-full min-h-screen ">
+      <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col">
+        <span className="text-4xl font-mono font-bold">
+          Enter Your GitHub username
+        </span>
+        <input
+          {...register("username")}
+          className="text-black my-5  py-[.7em]"
+        />
+        <button
+          type="submit"
+          className="bg-[#141416]/80 hover:bg-[#141416] py-[.7em] max-w-[10rem] rounded-xl "
+        >
+          {" "}
+          submit
+        </button>
+        
+      </form>
+      {/* Card */}
+      
     </div>
   );
 }
@@ -36,7 +53,7 @@ export default function Home() {
 //   const { register, handleSubmit, errors } = useForm();
 //   const onSubmit = (data) => console.log(data);
 
-//   return (
+//   return ( #141416 #141416 #23262F #141416
 //     <form onSubmit={handleSubmit(onSubmit)}>
 //       <input {...register("username")} />
 

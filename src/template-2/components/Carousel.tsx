@@ -31,10 +31,10 @@ const data = [
     img: "/Group4.jpg",
   },
 ];
-// const featuredData = [{}]
+
 let count = 0;
 
-export default function Carousel() {
+export default function Carousel({}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleOnNextClick = () => {

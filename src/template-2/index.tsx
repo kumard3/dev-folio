@@ -2,18 +2,18 @@ import About from "./components/About";
 import Carousel from "./components/Carousel";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
+import HeroComponent from "./components/Hero";
 import NavComponent from "./components/NavComponent";
 
 export default function Portfolio1() {
   return (
     <div className="	">
-      {/* <NavComponent />
-      <Hero />
+      <NavComponent />
+      <HeroComponent name={""} image={""} summary={""} />
       <Carousel />
       <About />
       <Contact />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
