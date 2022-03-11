@@ -10,6 +10,7 @@ import Repo from "../../template-1/components/Repo";
 import { DEVTO_USER_URL } from "../../helper/contansts";
 import NavComponent from "../../template-1/components/NavComponent";
 import Blog from "../../template-1/components/Blog";
+import Footer from "../../template-1/components/Footer";
 
 export default function PortfolioPage({
   devData,
@@ -31,7 +32,7 @@ export default function PortfolioPage({
     }
     GtihubReadMe();
   }, []);
-  console.log(githubRepoData);
+  console.log(devData);
   return (
     <div>
       {devData.length === 0 ? (
@@ -49,6 +50,7 @@ export default function PortfolioPage({
       {devData.length === 0 ? "" : <Blog devData={devData} />}
 
       <Repo githubRepoData={githubRepoData} />
+      <Footer username={githubUserData.name} />
     </div>
   );
 }

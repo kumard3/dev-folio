@@ -3,13 +3,13 @@ import React, { useRef, useState } from "react";
 import Link from "next/link";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 
-export default function NavComponent({ name, blog }) {
+interface Props {
+  name: string;
+  blog: boolean;
+}
+
+export default function NavComponent({ name, blog }: Props) {
   const navData = [
-    {
-      name: "Work",
-      href: "#work",
-      hidden: false,
-    },
     {
       name: "About",
       href: "#about",
@@ -19,6 +19,11 @@ export default function NavComponent({ name, blog }) {
       name: "Blog",
       href: "#blog",
       hidden: blog,
+    },
+    {
+      name: "Work",
+      href: "#work",
+      hidden: false,
     },
   ];
   // Create a ref that we add to the element for which we want to detect outside clicks
@@ -126,7 +131,7 @@ export default function NavComponent({ name, blog }) {
                     <h1
                       className={`${
                         n.hidden === false ? "block" : "hidden"
-                      } font-mono`}
+                      } font-mono cursor-pointer`}
                     >
                       {n.name}
                     </h1>
