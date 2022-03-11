@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/link-passhref */
 import * as React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { GITHUB_API_URL } from "../helper/contansts";
 import About from "../template-1/components/About";
 import Blog from "../template-1/components/Blog";
 type FormValues = {
@@ -8,21 +9,30 @@ type FormValues = {
 };
 
 export default function Home() {
-  const [username, setUserName] = React.useState<string | null>("");
+  const [getRateRemaining, setGitRateRemaining] = React.useState();
   const { register, handleSubmit } = useForm<FormValues>({
     mode: "onChange",
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     if (!data.username) return;
-    setUserName(data.username);
-    if (window !== undefined)
+    if (window !== undefined && getRateRemaining !== 0)
       window.location.href = `/portfolio/${data.username}`;
   };
 
+  React.useEffect(() => {
+    async function GtihubReadMe() {
+      const response = await fetch(`${GITHUB_API_URL}/rate_limit`);
+
+      const data = await response.json();
+      setGitRateRemaining(data.rate.remaining);
+      console.log(data);
+    }
+    GtihubReadMe();
+  }, []);
   return (
-    <div className="flex justify-center items-center w-full min-h-screen ">
-      <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col">
+    <div className="flex justify-center flex-col items-center w-full min-h-screen ">
+      <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col ">
         <span className="text-4xl font-mono font-bold">
           Enter Your GitHub username
         </span>
@@ -37,10 +47,11 @@ export default function Home() {
           {" "}
           submit
         </button>
-        
       </form>
-
-    
+      <h1 className="font-mono flex flex-col items-center">
+        Available requests
+        <span>60/{getRateRemaining}</span>
+      </h1>
     </div>
   );
 }

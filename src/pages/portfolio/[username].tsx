@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 
 import { GetServerSideProps } from "next";
-
+import VercelButton from "../../components/VercelButton";
 import { fetchUserReadme } from "../../lib/UserataFetch";
 import HeroComponent from "../../template-1/components/Hero";
 import About from "../../template-1/components/About";
@@ -32,9 +32,10 @@ export default function PortfolioPage({
     }
     GtihubReadMe();
   }, []);
-  console.log(devData);
+  console.log(githubRepoData);
   return (
     <div>
+      <VercelButton />
       {devData.length === 0 ? (
         <NavComponent name={githubUserData.name} blog={true} />
       ) : (
@@ -49,6 +50,7 @@ export default function PortfolioPage({
       <About data={data!} />
       {devData.length === 0 ? "" : <Blog devData={devData} />}
 
+      
       <Repo githubRepoData={githubRepoData} />
       <Footer username={githubUserData.name} />
     </div>
