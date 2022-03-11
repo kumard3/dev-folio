@@ -31,7 +31,7 @@ const VercelButton = () => {
         rel="noreferrer"
         target="_blank"
         onClick={handleClickLink}
-        className="flex bg-[#0070f3] items-center py-[1.5rem] px-[2.4rem] rounded-md transition-all duration-200 "
+        className="flex bg-[#FB4370] items-center py-[1.5rem] px-[2.4rem] rounded-md transition-all duration-200 "
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

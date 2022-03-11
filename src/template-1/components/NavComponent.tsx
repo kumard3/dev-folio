@@ -41,7 +41,7 @@ export default function NavComponent({ name, blog }: Props) {
           <div className="flex justify-between items-center   py-6 sm:justify-between sm:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <Link href="#home" passHref>
-                <h1 className="font-mono">{name}</h1>
+                <h1 className="font-mono ">{name}</h1>
               </Link>
             </div>
             <div className="-mr-2 -my-2 sm:hidden">
@@ -132,7 +132,7 @@ export default function NavComponent({ name, blog }: Props) {
                     <h1
                       className={`${
                         n.hidden === false ? "block" : "hidden"
-                      } font-mono cursor-pointer`}
+                      } font-mono cursor-pointer hover:text-[#FB4370] transition-all duration-300 hover:underline-offset-1 hover:underline  `}
                     >
                       {n.name}
                     </h1>

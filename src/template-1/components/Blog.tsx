@@ -27,7 +27,7 @@ export default function Blog({ devData }: any) {
                   className="flex  my-5 flex-col md:flex-row items-center  overflow-hidden "
                 >
                   <div className="flex flex-col gap-2 p-4 lg:p-6 max-w-2xl">
-                    <span className="text-gray-400  font-mono  ">
+                    <span className="text-[#FB4370] font-mono  ">
                       {formatPostDate(data.published_at)}
                     </span>
 
@@ -44,7 +44,7 @@ export default function Blog({ devData }: any) {
                         return (
                           <span
                             key={index}
-                            className="inline-block  text-gray-100 text-sm font-mono font-bold px-2 py-1  mr-2"
+                            className="inline-block  text-[#e8e8e8] text-sm font-mono font-bold px-2 py-1  mr-2"
                           >
                             {tag}
                           </span>
