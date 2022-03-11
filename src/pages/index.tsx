@@ -157,7 +157,7 @@ export default function Home() {
       <footer className="font-mono text-xl py-10 relative">
         Created by{" "}
         <a href="https://github.com/kumard3" target="_blank" rel="noreferrer">
-          kumard3
+        Kumar Deepanshu
         </a>
       </footer>
     </div>
