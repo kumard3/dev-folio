@@ -11,9 +11,10 @@ export const toLowerCase = (value: string) => {
   return value.trim().toLowerCase();
 };
 
-export const formatPostDate = (date: number | string) => {
+export const formatPostDate = (date: any) => {
   if (!date) return '';
   const formattedDate = new Date(date).toLocaleDateString(
+    //@ts-ignore
     {},
     { timeZone: 'UTC', month: 'long', day: '2-digit', year: 'numeric' },
   );

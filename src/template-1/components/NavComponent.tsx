@@ -59,6 +59,7 @@ export default function NavComponent({ name, blog }: Props) {
                             className="bg-white rounded-md p-2 inline-flex items-center justify-center  hover:text-gray-500 hover:bg-gray-100 "
                           >
                             <span className="sr-only">Close menu</span>
+                            {/* @ts-ignore */}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
