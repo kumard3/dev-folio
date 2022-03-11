@@ -31,7 +31,7 @@ export default function HeroComponent({ name, image, summary }: Props) {
           <img
             src={image}
             alt=""
-            className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 rounded-full p-1 bg-gradient-to-r from-[#FC4370]  to-red-500 "
+            className="object-contain h-72 sm:h-80 border-[5px] border-[#FC4370] rounded-full  "
           />
         </div>
       </div>

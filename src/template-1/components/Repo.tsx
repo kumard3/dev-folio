@@ -11,7 +11,7 @@ export default function Repo({ githubRepoData }: any) {
           return (
             <div
               key={index}
-              className="max-w-sm bg-[#23262F] m-3 min-h-[230px] py-3 rounded-xl"
+              className="sm:w-[350px] w-full mx-4 bg-[#23262F] m-3 min-h-[230px] py-3 rounded-xl"
             >
               <div className="flex flex-col px-4 py-3">
                 <div className="flex justify-between px-3 py-2">
@@ -66,12 +66,9 @@ export default function Repo({ githubRepoData }: any) {
                     </a>
                   </div>
                 </div>
-                <div className="max-w-full">
+                <div className="max-w-full py-6">
                   <h1 className="text-3xl font-bold font-mono">{n.name}</h1>
-                  <p className="text-lg ">
-                    This is a collection of interactive machine-learning
-                    experiments.
-                  </p>
+                  <p className="text-lg ">{n.description}</p>
                 </div>
               </div>
             </div>

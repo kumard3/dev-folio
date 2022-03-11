@@ -1,38 +1,82 @@
 import React from "react";
+import { formatPostDate } from "../../helper";
 
-export default function Blog() {
+export default function Blog({ devData }: any) {
   return (
-    <div id="blog" className="flex flex-col justify-center items-center">
-      <div className="flex flex-col md:flex-row items-center min-h-[15rem] overflow-hidden">
-        <div className="flex flex-col gap-2 p-4 lg:p-6 max-w-2xl">
-          <span className="text-gray-400  font-mono  ">April 07, 2021</span>
+    <div id="blog" className="container mx-auto ">
+      <h1 className="text-5xl font-mono pl-20 text-start w-full font-semibold">
+        My Blog
+      </h1>
+      <div className="flex flex-col justify-center items-center">
+        {devData.map(
+          (
+            data: {
+              title: string;
+              published_at: number | string;
+              cover_image: string;
+              description: string;
+              tag_list: string[];
+            },
+            index: number
+          ) => {
+            return (
+              <div
+                key={index}
+                className="flex  my-5 flex-col md:flex-row items-center  overflow-hidden"
+              >
+                <div className="flex flex-col gap-2 p-4 lg:p-6 max-w-2xl">
+                  <span className="text-gray-400  font-mono  ">
+                    {formatPostDate(data.published_at)}
+                  </span>
 
-          <h2 className="text-gray-100 text-[40px] font-bold">
-            Working with legacy stacks
-          </h2>
+                  <h2 className="text-gray-100 text-[40px] font-bold">
+                    {data.title}
+                  </h2>
 
-          <p className="text-gray-500 text-[23px]">
-            This is a section of some simpl filler text, also known as
-            placeholder text.
-          </p>
+                  <p className="text-gray-400 text-[23px]">
+                    {data.description}
+                  </p>
 
-          <div className="">
-            <a
-              href="#"
-              className="text-indigo-500 hover:text-indigo-600 active:text-indigo-700  font-semibold transition duration-100"
-            >
-              Read more
-            </a>
-          </div>
-        </div>
-        <a href="#" className="  relative px-2">
-          <img
-            src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600"
-            loading="lazy"
-            alt="Photo by Lorenzo Herrera"
-            className="w-full h-full object-cover object-center rounded-xl inset-0 gtransition duration-200"
-          />
-        </a>
+                  <div className="">
+                    {data.tag_list.map((tag, index) => {
+                      return (
+                        <span
+                          key={index}
+                          className="inline-block  text-gray-100 text-sm font-mono font-bold px-2 py-1  mr-2"
+                        >
+                          {tag}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+                {data.cover_image === null ? (
+                  <div className=" flex flex-col md:flex-row items-center px-5 sm:w-[500px] ">
+                    <a href="#" className=" h-80  w-full  relative">
+                      {/* <img
+                  src=""
+                  loading="lazy"
+                  alt=""
+                  className="w-full h-full object-cover object-center rounded-xl  transition duration-200"
+                /> */}
+                    </a>
+                  </div>
+                ) : (
+                  <div className=" flex flex-col md:flex-row items-center px-5 sm:w-[500px] ">
+                    <a href="#" className=" h-80  w-full  relative">
+                      <img
+                        src={data.cover_image}
+                        loading="lazy"
+                        alt=""
+                        className="w-full h-full object-cover object-center rounded-xl  transition duration-200"
+                      />
+                    </a>
+                  </div>
+                )}
+              </div>
+            );
+          }
+        )}
       </div>
     </div>
   );

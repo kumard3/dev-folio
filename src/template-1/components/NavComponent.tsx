@@ -3,26 +3,24 @@ import React, { useRef, useState } from "react";
 import Link from "next/link";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 
-const navData = [
-  {
-    name: "Home",
-    href: "#home",
-  },
-  {
-    name: "Work",
-    href: "#work",
-  },
-  {
-    name: "About",
-    href: "#about",
-  },
-  {
-    name: "Contact",
-    href: "#contact",
-  },
-];
-
-export default function NavComponent() {
+export default function NavComponent({ name, blog }) {
+  const navData = [
+    {
+      name: "Work",
+      href: "#work",
+      hidden: false,
+    },
+    {
+      name: "About",
+      href: "#about",
+      hidden: false,
+    },
+    {
+      name: "Blog",
+      href: "#blog",
+      hidden: blog,
+    },
+  ];
   // Create a ref that we add to the element for which we want to detect outside clicks
   const ref = useRef<HTMLDivElement>(null);
 
@@ -31,7 +29,6 @@ export default function NavComponent() {
   // Call hook passing in the ref and a function to call on outside click
   useOnClickOutside(ref, () => setModalOpen(false));
 
-
   return (
     <div className="sticky top-0 z-10 backdrop-blur-sm  text-xl font-bold drop-shadow-xl flex-none transition-colors duration-500  ">
       <div className="w-full container mx-auto">
@@ -39,7 +36,7 @@ export default function NavComponent() {
           <div className="flex justify-between items-center   py-6 sm:justify-between sm:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <Link href="#home" passHref>
-                <h1>LOGO</h1>
+                <h1 className="font-mono">{name}</h1>
               </Link>
             </div>
             <div className="-mr-2 -my-2 sm:hidden">
@@ -61,7 +58,7 @@ export default function NavComponent() {
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               stroke="currentColor"
-                              aria-hidden="true"
+                              aria-hidden="hidden"
                               className="h-6 w-6"
                               viewBox="0 0 24 24"
                             >
@@ -83,7 +80,11 @@ export default function NavComponent() {
                                 href={item.href}
                                 className="-m-3 p-3 flex items-center rounded-md hover:bg-black  border-[1px] border-red-500/60"
                               >
-                                <h1 className="my-3 ml-3 text-3xl font-bold ">
+                                <h1
+                                  className={`${
+                                    item.hidden === false ? "block" : "hidden"
+                                  } my-3 ml-3 text-3xl font-bold `}
+                                >
                                   {item.name}
                                 </h1>
                               </a>
@@ -122,7 +123,13 @@ export default function NavComponent() {
               {navData.map((n) => {
                 return (
                   <Link key={n.name} href={n.href}>
-                    {n.name}
+                    <h1
+                      className={`${
+                        n.hidden === false ? "block" : "hidden"
+                      } font-mono`}
+                    >
+                      {n.name}
+                    </h1>
                   </Link>
                 );
               })}
@@ -133,4 +140,3 @@ export default function NavComponent() {
     </div>
   );
 }
-

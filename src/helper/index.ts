@@ -10,3 +10,13 @@ export const toLowerCase = (value: string) => {
   if (!value || value.length < 1) return value;
   return value.trim().toLowerCase();
 };
+
+export const formatPostDate = (date: number | string) => {
+  if (!date) return '';
+  const formattedDate = new Date(date).toLocaleDateString(
+    {},
+    { timeZone: 'UTC', month: 'long', day: '2-digit', year: 'numeric' },
+  );
+  const sp = formattedDate.split(' ');
+  return `${sp[1]} ${sp[0]}, ${sp[2]}`;
+};
