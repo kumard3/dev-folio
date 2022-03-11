@@ -41,8 +41,8 @@ const VercelButton = () => {
           fill="#fff"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M57.5 0L115 100H0L57.5 0z"
           />
         </svg>
