@@ -3,7 +3,7 @@ import { formatPostDate } from "../../helper";
 
 export default function Blog({ devData }: any) {
   return (
-    <div id="blog" className="container mx-auto ">
+    <div id="blog" className="container mx-auto py-10">
       <h1 className="text-5xl font-mono pl-20 text-start w-full font-semibold">
         My Blog
       </h1>
