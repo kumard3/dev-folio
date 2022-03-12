@@ -31,7 +31,7 @@ export default function PortfolioPage({
     }
     GtihubReadMe();
   }, []);
-  console.log(githubRepoData);
+  console.log(githubRepoData.splice(0,6));
   return (
     <div>
       <VercelButton />
@@ -58,6 +58,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const devCommunity = await fetch(
     //@ts-ignore
     `https://dev.to/api/articles?username=${params.username}`
+    //https://dev.to/api/articles?per_page=7?username=
   );
   const githubUser = await fetch(
     //@ts-ignore
@@ -72,6 +73,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const githubUserData = await githubUser.json();
   const githubRepoData = await githubRepo.json();
   const devData = await devCommunity.json();
+
   return { props: { devData, githubRepoData, githubUserData } };
 };
 //https://dev.to/api/users/by_username?url=colbyfayock

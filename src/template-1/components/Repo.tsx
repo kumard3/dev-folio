@@ -101,9 +101,9 @@ export default function Repo({ githubRepoData }: any) {
                                 transform="translate(0 0)"
                                 fill="none"
                                 stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-miterlimit="10"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeMiterlimit="10"
                                 stroke-width="1.5px"
                               ></path>
                             </g>
