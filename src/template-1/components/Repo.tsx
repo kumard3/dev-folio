@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Repo({ githubRepoData }: any) {
+  console.log(githubRepoData)
   return (
     <div id="work" className="container mx-auto">
       <h1 className="text-5xl font-mono font-semibold text-start px-10 py-10">
@@ -104,7 +105,7 @@ export default function Repo({ githubRepoData }: any) {
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                                 strokeMiterlimit="10"
-                                stroke-width="1.5px"
+                                strokeWidth="1.5px"
                               ></path>
                             </g>
                           </svg>
