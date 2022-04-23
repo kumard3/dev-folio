@@ -1,8 +1,8 @@
 const IS_PRODUCTION = process.env.IS_PRODUCTION
 //https://github.com/kumard3/dev-folio-templates
-const VercelButton1 = () => {
+const VercelButton2 = () => {
   const deployUrl = 'https://vercel.com/new/git/external?repository-url='
-  const repository = 'https://github.com/kumard3/dev-folio-templates'
+  const repository = 'https://github.com/kumard3/dev-folio-template-2'
   const variables = `&env=NEXT_PUBLIC_USERNAME`
   const projectName = '&project-name=my-awesome-portfolio'
   const repositoryName = '&repository-name=my-awesome-portfolio'
@@ -24,7 +24,7 @@ const VercelButton1 = () => {
     window.open(link, '_blank')
   }
   return (
-    <div className="flex justify-end w-full fixed bottom-[2rem] right-4 z-50">
+    <div className="flex justify-end w-full fixed bottom-[2rem] right-4 z-10">
       <div
         //@ts-ignore
 
@@ -52,4 +52,4 @@ const VercelButton1 = () => {
   )
 }
 
-export default VercelButton1
+export default VercelButton2

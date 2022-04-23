@@ -1,5 +1,5 @@
-import React from "react";
-import { formatPostDate } from "../../helper";
+import React from 'react'
+import { formatPostDate } from '../../helper'
 
 export default function Blog({ devData }: any) {
   return (
@@ -11,21 +11,18 @@ export default function Blog({ devData }: any) {
         {devData.map(
           (
             data: {
-              title: string;
-              published_at: number | string;
-              cover_image: string;
-              description: string;
-              tag_list: string[];
-              url: string;
+              title: string
+              published_at: number | string
+              cover_image: string
+              description: string
+              tag_list: string[]
+              url: string
             },
-            index: number
+            index: number,
           ) => {
             return (
-              <a href={data.url} target="_blank" >
-                <div
-                  key={index}
-                  className="flex  my-5 flex-col md:flex-row items-center  overflow-hidden "
-                >
+              <a href={data.url} target="_blank" rel="noreferrer" key={index}>
+                <div className="flex  my-5 flex-col md:flex-row items-center  overflow-hidden ">
                   <div className="flex flex-col gap-2 p-4 lg:p-6 max-w-2xl">
                     <span className="text-[#FB4370] font-mono  ">
                       {formatPostDate(data.published_at)}
@@ -48,7 +45,7 @@ export default function Blog({ devData }: any) {
                           >
                             {tag}
                           </span>
-                        );
+                        )
                       })}
                     </div>
                   </div>
@@ -77,10 +74,10 @@ export default function Blog({ devData }: any) {
                   )}
                 </div>
               </a>
-            );
-          }
+            )
+          },
         )}
       </div>
     </div>
-  );
+  )
 }
