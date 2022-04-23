@@ -30,8 +30,7 @@ export default function PortfolioPage({
       setData(github);
     }
     GtihubReadMe();
-  }, []);
-  console.log(githubRepoData);
+  }, [username]);
   return (
     <div>
       <VercelButton />
