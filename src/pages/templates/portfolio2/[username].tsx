@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 
 import BottomNav from '../../../components/BottomNav'
 
-
 import { useLocalStorage } from '../../../helper/useLocalStorage'
 import VercelButton2 from '../../../components/VercelButton/VercelButton2'
 export default function Portfolio2({ name, bio, githubRepoData }: any) {
@@ -44,14 +43,19 @@ export default function Portfolio2({ name, bio, githubRepoData }: any) {
             <p>{bio}</p>
           </div>
           <>
-            <div className="relative block group  my-7 ml-4 cursor-pointer">
+            <a
+              href={`https://github.com/${items}`}
+              target="_blank"
+              className="relative block group  my-7 ml-4 cursor-pointer"
+              rel="noreferrer"
+            >
               <span className="absolute inset-0 border-2  border-[#188AEC] rounded-lg"></span>
               <div className="transition bg-[#188AEC] text-white rounded-lg group-hover:-translate-x-0  group-hover:-translate-y-0 -translate-x-3 translate-y-2">
                 <div className="py-3 px-10 ">
                   <p className="mt-1 text-xl">Say Hello</p>
                 </div>
               </div>
-            </div>
+            </a>
           </>
         </div>
       </div>
