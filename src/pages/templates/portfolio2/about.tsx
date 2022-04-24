@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown/with-html'
 import VercelButton2 from '../../../components/VercelButton/VercelButton2'
 import { fetchUserReadme } from '../../../lib/UserataFetch'
-import BottomNav from '../../../template-2/components/BottomNav'
+import BottomNav from '../../../components/BottomNav'
 
 export default function About() {
   const [items, setItems] = useState('')

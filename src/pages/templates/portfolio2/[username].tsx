@@ -1,9 +1,9 @@
 import { GetServerSideProps } from 'next'
 import React, { useEffect, useState } from 'react'
 
-import BottomNav from '../../../template-2/components/BottomNav'
+import BottomNav from '../../../components/BottomNav'
 import Hero from '../../../template-2/components/Hero'
-// import { useLocalStorage } from '.././helper/useLocalStorage'
+
 import { useLocalStorage } from '../../../helper/useLocalStorage'
 import VercelButton2 from '../../../components/VercelButton/VercelButton2'
 export default function Portfolio2({ name, bio, githubRepoData }: any) {

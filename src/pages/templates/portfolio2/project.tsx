@@ -4,7 +4,7 @@
 import { GetServerSideProps } from 'next'
 import React, { useEffect, useState } from 'react'
 import VercelButton2 from '../../../components/VercelButton/VercelButton2'
-import BottomNav from '../../../template-2/components/BottomNav'
+import BottomNav from '../../../components/BottomNav'
 
 export default function Project() {
   const [data, setData] = React.useState<string[] | null>([])
