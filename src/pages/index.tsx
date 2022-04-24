@@ -4,6 +4,7 @@ import Image from 'next/image'
 import * as React from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { GITHUB_API_URL } from '../helper/contansts'
+import { useLocalStorage } from '../helper/useLocalStorage'
 
 type FormValues = {
   username: string
@@ -14,11 +15,13 @@ export default function Home() {
   const { register, handleSubmit } = useForm<FormValues>({
     mode: 'onChange',
   })
+  const [name, setName] = useLocalStorage<string>('name','')
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     if (!data.username) return
     if (window !== undefined && getRateRemaining !== 0)
-      window.location.href = `/portfolio/${data.username}`
+      window.location.href = `/templates/${data.username}`
+    setName(data.username)
   }
 
   React.useEffect(() => {
