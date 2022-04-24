@@ -37,12 +37,11 @@ export default function TemplateName() {
     if (window !== undefined) window.location.href = `${url}${items}`
   }
 
-  //https://res.cloudinary.com/ddcg0rzlo/image/upload/v1650175148/template-8-min_x2ynj2.jpg
-  //        image: 'https://res.cloudinary.com/ddcg0rzlo/image/upload/v1650175276/template1_x0eqp8.jpg',
-
   return (
     <>
-      <h1 className="text-5xl text-center py-10 font-mono">Select a template</h1>
+      <h1 className="text-5xl text-center py-10 font-mono font-bold">
+        Select a template
+      </h1>
       <div className="flex justify-around">
         {templateSelected.map((n, index) => {
           return (
