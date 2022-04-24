@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { GetServerSideProps } from 'next'
+
 import React, { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown/with-html'
 import VercelButton2 from '../../../components/VercelButton/VercelButton2'

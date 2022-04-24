@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next'
 import React, { useEffect, useState } from 'react'
 
 import BottomNav from '../../../components/BottomNav'
-import Hero from '../../../template-2/components/Hero'
+import Hero from '../../../components/template-2/components/Hero'
 
 import { useLocalStorage } from '../../../helper/useLocalStorage'
 import VercelButton2 from '../../../components/VercelButton/VercelButton2'
