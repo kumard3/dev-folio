@@ -24,7 +24,7 @@ const VercelButton2 = () => {
     window.open(link, '_blank')
   }
   return (
-    <div className="flex justify-end w-full fixed bottom-[2rem] right-4 z-10">
+    <div className="flex justify-end max-w-10 fixed bottom-[2rem] right-4 z-10">
       <div
         //@ts-ignore
 
