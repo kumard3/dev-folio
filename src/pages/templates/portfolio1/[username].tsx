@@ -31,7 +31,7 @@ export default function PortfolioPage({
     GtihubReadMe()
   }, [username])
   return (
-    <div>
+    <div className="bg-black text-white">
       <VercelButton1 />
       {devData.length === 0 ? (
         <NavComponent name={githubUserData.name} blog={true} />
@@ -74,4 +74,3 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
   return { props: { devData, githubRepoData, githubUserData } }
 }
-//https://dev.to/api/users/by_username?url=colbyfayock

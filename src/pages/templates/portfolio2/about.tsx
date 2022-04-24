@@ -17,15 +17,16 @@ export default function About() {
       setItems(items)
     }
   }, [])
-  console.log(items)
+
+  
   useEffect(() => {
     //@ts-ignore
-    const userName = JSON.parse(localStorage.getItem('userData'))
+    const userName = JSON.parse(localStorage.getItem('userName'))
     if (userName) {
       setUserName(userName)
     }
   }, [])
-  console.log(userName)
+
 
   React.useEffect(() => {
     async function GtihubReadMe() {
@@ -37,11 +38,11 @@ export default function About() {
   }, [data])
 
   return (
-    <>
+    <div  className=" bg-white dark:bg-gradient-to-r dark:from-[#1F2937]  dark:to-[#111827] min-h-screen w-full relative text-gray-600 dark:text-white ">
        <VercelButton2 />
       <BottomNav />
 
-      <div className="container mx-auto flex flex-col items-start px-5 mt-6 max-w-5xl min-h-[182vh] xs:min-h-[170vh] sm:min-h-screen ">
+      <div className="container mx-auto flex flex-col items-start px-5 pt-6 max-w-5xl min-h-[182vh] xs:min-h-[170vh] sm:min-h-screen  ">
         <div className="bg-[#60A5FA] h-[120px] top-36 right-20 absolute w-[120px] rounded-full blur-[90px] filter "></div>
         <div className="bg-[#60A5FA] h-[120px] top-[200px] right-[200px] absolute w-[120px] rounded-full blur-[90px] filter "></div>
         <h1 className="SpaceGroteskBold text-[50px] sm:text-[64px]">
@@ -73,23 +74,6 @@ export default function About() {
           </div>
         </>
       </div>
-    </>
+    </div>
   )
 }
-
-// export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-//   const githubUser = await fetch(
-//     //@ts-ignore
-//     `https://api.github.com/users/${params.username}`,
-//   )
-//   const githubRepo = await fetch(
-//     //@ts-ignore
-//     `https://api.github.com/users/${params.username}/repos?per_page=20`,
-//   )
-//   //@ts-ignore
-
-//   const githubUserData = await githubUser.json()
-//   const githubRepoData = await githubRepo.json()
-
-//   return { props: { githubRepoData, githubUserData } }
-// }

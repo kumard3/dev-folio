@@ -35,7 +35,7 @@ export default function Home() {
     GtihubReadMe()
   }, [])
   return (
-    <div className="flex justify-center flex-col items-center w-full min-h-screen ">
+    <div className="bg-black  text-white  flex justify-center flex-col items-center w-full min-h-screen ">
       <div className="bg-slate-100 rounded-[5px] px-[20px] py-[10px] my-10">
         <img src="/logo.svg" alt="DevFolio logo" />
       </div>

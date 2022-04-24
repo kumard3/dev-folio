@@ -24,7 +24,7 @@ export default function Portfolio2({ name, bio, githubRepoData }: any) {
   }, [])
 
   return (
-    <div>
+    <div className=" bg-white dark:bg-gradient-to-r dark:from-[#1F2937]  dark:to-[#111827] min-h-[109vh] w-full relative text-gray-600 dark:text-white ">
       <VercelButton2 />
       <div className="relative w-full  container px-4 mx-auto flex flex-col justify-center items-center h-screen -mt-20 ">
         <div className="bg-[#60A5FA] h-[120px] top-36 right-20 absolute w-[120px] rounded-full blur-[90px] filter "></div>
