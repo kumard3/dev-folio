@@ -8,17 +8,26 @@ import BottomNav from '../../../components/BottomNav'
 
 export default function Project() {
   const [data, setData] = React.useState<string[] | null>([])
-
+  const [userName, setUserName] = React.useState('')
   useEffect(() => {
     //@ts-ignore
     const userName = JSON.parse(localStorage.getItem('repo'))
-    if (userName) {
+    //@ts-ignore
+    const name = JSON.parse(localStorage.getItem('userData'))
+    // if (userName) {
+    //   setUserName(userName)
+    // }
+    if (userName && name) {
       setData(userName)
+      setUserName(name)
     }
   }, [])
   return (
     <div className=" bg-white dark:bg-gradient-to-r dark:from-[#1F2937]  dark:to-[#111827] min-h-screen w-full relative text-gray-600 dark:text-white ">
+      <h1 className="Yellowtail text-5xl py-4 px-5">{userName}</h1>
+
       <VercelButton2 />
+
       <div className="container mx-auto flex flex-col justify-center h-full w-full relative px-3">
         <div className="bg-[#60A5FA] h-[120px] top-36 right-20 absolute w-[120px] rounded-full blur-[90px] filter "></div>
         <div className="bg-[#60A5FA] h-[120px] top-[200px] right-[200px] absolute w-[120px] rounded-full blur-[90px] filter "></div>

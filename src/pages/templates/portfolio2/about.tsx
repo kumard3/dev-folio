@@ -18,15 +18,13 @@ export default function About() {
     }
   }, [])
 
-  
   useEffect(() => {
     //@ts-ignore
-    const userName = JSON.parse(localStorage.getItem('userName'))
+    const userName = JSON.parse(localStorage.getItem('userData'))
     if (userName) {
       setUserName(userName)
     }
   }, [])
-
 
   React.useEffect(() => {
     async function GtihubReadMe() {
@@ -38,8 +36,10 @@ export default function About() {
   }, [data])
 
   return (
-    <div  className=" bg-white dark:bg-gradient-to-r dark:from-[#1F2937]  dark:to-[#111827] min-h-screen w-full relative text-gray-600 dark:text-white ">
-       <VercelButton2 />
+    <div className=" bg-white dark:bg-gradient-to-r dark:from-[#1F2937]  dark:to-[#111827] min-h-screen w-full relative text-gray-600 dark:text-white ">
+      <h1 className="Yellowtail text-5xl py-4 px-5">{userName}</h1>
+
+      <VercelButton2 />
       <BottomNav />
 
       <div className="container mx-auto flex flex-col items-start px-5 pt-6 max-w-5xl min-h-[182vh] xs:min-h-[170vh] sm:min-h-screen  ">

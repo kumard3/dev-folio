@@ -114,7 +114,7 @@ export default function TemplateName() {
       <h1 className="text-5xl text-center py-10 font-mono font-bold">
         Select a template
       </h1>
-      <div className="flex justify-around">
+      <div className="flex justify-around flex-wrap">
         {templateSelected.map((n, index) => {
           return (
             <>
@@ -123,7 +123,7 @@ export default function TemplateName() {
                 onClick={() => {
                   onSubmit(username, n.url)
                 }}
-                className="container bg-[#111111] mx-auto max-w-lg 2xl:max-w-xl overflow-hidden  scrollbar-none my-5 "
+                className="container cursor-pointer bg-[#111111] mx-auto max-w-lg 2xl:max-w-xl overflow-hidden  scrollbar-none my-5 "
               >
                 <div className=" mx-1 flex flex-col   border-gray-500  border relative rounded">
                   <div className="flex-1 flex justify-center items-center overflow-hidden p-2  ">
