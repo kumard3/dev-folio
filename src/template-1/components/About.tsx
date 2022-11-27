@@ -4,6 +4,7 @@ interface Props {
   data: string;
 }
 export default function About({ data }: Props) {
+  console.log(data)
   return (
     <div id="about" className="container mx-auto flex flex-col justify-center items-center">
       <h1 className=" text-5xl p-10 font-semibold text-start w-full font-mono">

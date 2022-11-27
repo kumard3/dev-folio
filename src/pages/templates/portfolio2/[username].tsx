@@ -34,9 +34,7 @@ export default function Portfolio2({ name, bio, githubRepoData }: any) {
           <div className="flex flex-col items-start SpaceGroteskBold text-[28px] md:text-[50px] lg:text-[64px] ">
             <h1>Hello!👋🏻</h1>
             <h1>My name is {name}</h1>
-            {/* <h1>
-            I'm a Front End <span className="text">Developer</span>
-          </h1> */}
+  
           </div>
           <div className="bg-[#60A5FA] h-[120px] top-[200px] left-[5px] absolute w-[120px] rounded-full blur-[90px] filter "></div>
 

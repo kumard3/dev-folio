@@ -1,4 +1,3 @@
-import { getGithubReadmeURLType } from "../types/helperTypes";
 import { GITHUB_README_URL } from "./contansts";
 
 export const getGithubReadmeURL = (username: string, branch = 'main', fileName = 'README.md') => {
